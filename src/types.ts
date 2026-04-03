@@ -39,7 +39,7 @@ declare global {
       importBackup: () => Promise<{ success: boolean, error?: string }>;
       getCompanyNames: () => Promise<string[]>;
     };
-
+    ipcRenderer: { on: (channel: string, func: (...args: any[]) => void) => void; };
 
 
   }
