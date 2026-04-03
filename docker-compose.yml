@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  timetrack-pro:
+    image: your-docker-user/timetrack-pro:latest
+    container_name: timetrack-pro
+    ports:
+      - "6901:6901" # Web access (HTTPS by default on KasmVNC)
+    volumes:
+      - ./data:/app/data # Persistence
+    environment:
+      - VNC_PW=password # Change this!
+      - VNC_WIDTH=1400
+      - VNC_HEIGHT=900
+    restart: always
